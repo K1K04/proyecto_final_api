@@ -1,0 +1,358 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    background: url('https://cloudfront-eu-central-1.images.arcpublishing.com/diarioas/NHSRXZLHBFGNZBWFUKLTUWRE7I.png') no-repeat center center/cover;
+    color: #333;
+    padding: 40px 0;
+    text-align: center;
+}
+
+header #branding h1 {
+    font-size: 48px;
+    margin: 0;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+header nav {
+    margin-top: 20px;
+}
+
+header nav ul {
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+header nav ul li {
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: #333;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+header nav ul li a:hover {
+    color: #757575;
+}
+
+form {
+    display: flex;
+    gap: 10px;
+}
+
+.form span {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+}
+
+.form .w {
+    background-color: #4CAF50; /* Green */
+}
+
+.form .d {
+    background-color: #FFC107; /* Yellow */
+}
+
+.form .l {
+    background-color: #F44336; /* Red */
+}
+
+.card {
+    background: #fff;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px; /* Added for smoother corners */
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.card img {
+    border-radius: 10px; /* Adjust the border-radius */
+    width: 50px;
+    height: 50px;
+    object-fit: cover; /* Ensure the image fits within the circle */
+    transition: transform 0.3s;
+}
+
+.card img:hover {
+    transform: scale(1.1); /* Slightly enlarge images on hover */
+}
+
+.card h3 {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+}
+
+.card h3 a {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s;
+}
+
+.card h3 a:hover {
+    color: #0069d9; /* Change color on hover */
+}
+
+.card p {
+    margin: 5px 0;
+    font-size: 16px;
+    color: #666;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: none;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+    border: none;
+}
+
+thead th {
+    background: #0069d9;
+    color: #fff;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tbody tr:hover {
+    background-color: #ddd;
+}
+
+.welcome {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.welcome h2 {
+    font-size: 36px;
+    margin: 10px 0;
+    color: #333;
+}
+
+.welcome p {
+    font-size: 18px;
+    color: #555;
+}
+
+.filter {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.filter h3 {
+    font-size: 24px;
+    margin: 10px 0;
+    color: #333;
+}
+
+.filter form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.filter form label {
+    margin-right: 10px;
+    font-size: 18px;
+    color: #333;
+}
+
+.filter form input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    transition: border 0.3s;
+    width: 250px;
+}
+
+.filter form button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #0069d9;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.filter form button:hover {
+    background-color: #0056b3;
+}
+
+
+footer {
+    background: #343a40;
+    color: #fff;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.footer-section img.footer-logo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover; /* Ensure the logo fits within the circle */
+}
+
+.footer-section .form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.footer-section .note {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-section .input-group {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 400px;
+}
+
+.footer-section .input_field {
+    width: 70%;
+    height: 42px;
+    padding: 0 10px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    border: 1px solid #e5e5e5;
+    transition: all 0.3s ease-in-out;
+}
+
+.footer-section .input_field:focus {
+    border: 1px solid transparent;
+    box-shadow: 0 0 5px rgba(0, 105, 217, 0.5);
+}
+
+.footer-section .submit {
+    width: 30%;
+    height: 42px;
+    background: #0069d9;
+    color: #fff;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+.footer-section .submit:hover {
+    background: #0056b3;
+}
+
+.rating {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.rating input {
+    display: none;
+}
+
+.rating label {
+    font-size: 30px;
+    color: #ccc;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+}
+
+.rating input:checked ~ label,
+.rating label:hover,
+.rating label:hover ~ label {
+    color: #ff9800;
+}
+
+.status {
+    margin-top: 20px;
+}
+
+.status span {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    margin: 0 5px;
+}
+
+.status .w {
+    background-color: #4CAF50;
+}
+
+.status .d {
+    background-color: #FFC107;
+}
+
+.status .l {
+    background-color: #F44336;
+}
+
+footer p {
+    margin: 20px 0 0;
+    font-size: 14px;
+    color: #bbb;
+}

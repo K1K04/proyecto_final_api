@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Matches Around the World</h2>
+    <div>
+        {% for match in matches %}
+            <div class="card">
+                <h3>{{ match.homeTeam.name }} vs {{ match.awayTeam.name }}</h3>
+                <p><strong>Competition:</strong> {{ match.competition.name }}</p>
+                <p><strong>Date:</strong> {{ match.utcDate }}</p>
+                <p><strong>Status:</strong> {{ match.status }}</p>
+                <p><strong>Score:</strong> {{ match.score.fullTime.homeTeam }} - {{ match.score.fullTime.awayTeam }}</p>
+                <img src="{{ match.homeTeam.crest }}" alt="{{ match.homeTeam.name }} crest" width="50">
+                <img src="{{ match.awayTeam.crest }}" alt="{{ match.awayTeam.name }} crest" width="50">
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
+
