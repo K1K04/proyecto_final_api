@@ -81,20 +81,23 @@ form {
 .card {
     background: #fff;
     padding: 20px;
-    margin: 20px 0;
+    margin: 20px 10px; /* Adjusted margin for better layout */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px; /* Added for smoother corners */
     display: flex;
+    flex-direction: column;
     align-items: center;
     gap: 20px;
     transition: box-shadow 0.3s ease-in-out;
+    width: calc(50% - 40px); /* Width for two columns with gap */
+    box-sizing: border-box; /* Include padding and border in width */
 }
 
 .card img {
-    border-radius: 10px; /* Adjust the border-radius */
-    width: 50px;
-    height: 50px;
-    object-fit: cover; /* Ensure the image fits within the circle */
+    border-radius: 5px; /* Adjusted border-radius */
+    width: 80px;
+    height: 80px;
+    object-fit: contain; /* Ensure the image fits within the box */
     transition: transform 0.3s;
 }
 
@@ -106,6 +109,7 @@ form {
     margin: 0;
     font-size: 24px;
     color: #333;
+    text-align: center; /* Center align text */
 }
 
 .card h3 a {
@@ -122,10 +126,18 @@ form {
     margin: 5px 0;
     font-size: 16px;
     color: #666;
+    text-align: center; /* Center align text */
 }
 
 .card:hover {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /* Distribute space around cards */
+    gap: 20px;
 }
 
 table {
@@ -220,7 +232,6 @@ tbody tr:hover {
 .filter form button:hover {
     background-color: #0056b3;
 }
-
 
 footer {
     background: #343a40;
