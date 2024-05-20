@@ -13,10 +13,27 @@ body {
 }
 
 header {
-    background: url('https://cloudfront-eu-central-1.images.arcpublishing.com/diarioas/NHSRXZLHBFGNZBWFUKLTUWRE7I.png') no-repeat center center/cover;
-    color: #333;
+    position: relative;
+    background: url('https://www.uaeh.edu.mx/gaceta/2/numero13/marzo/images/alumnos-garza-comunican/main.jpg') no-repeat center center/cover;
+    color: #64ff48;
     padding: 40px 0;
     text-align: center;
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+header .container {
+    position: relative;
+    z-index: 2;
 }
 
 header #branding h1 {
@@ -42,7 +59,7 @@ header nav ul li {
 }
 
 header nav ul li a {
-    color: #333;
+    color: #fff;
     text-decoration: none;
     text-transform: uppercase;
     font-size: 18px;
@@ -51,7 +68,54 @@ header nav ul li a {
 }
 
 header nav ul li a:hover {
-    color: #757575;
+    color: #ccc;
+}
+
+.matches-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.match {
+    width: 48%;
+    margin: 1% 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    background-color: #fafafa;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.match h2 {
+    font-size: 1.2em;
+    margin: 0 0 10px;
+}
+
+.match a {
+    text-decoration: none;
+    color: #000;
+}
+
+.match img {
+    width: 100%;
+    height: auto;
+}
+
+.match p {
+    font-size: 0.9em;
+    color: #555;
+    margin: 5px 0;
+}
+
+.videos h3 {
+    font-size: 1em;
+    margin: 10px 0;
+}
+
+@media (max-width: 768px) {
+    .match {
+        width: 100%;
+    }
 }
 
 form {
@@ -81,35 +145,35 @@ form {
 .card {
     background: #fff;
     padding: 20px;
-    margin: 20px 10px; /* Adjusted margin for better layout */
+    margin: 20px 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 10px; /* Added for smoother corners */
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 20px;
     transition: box-shadow 0.3s ease-in-out;
-    width: calc(50% - 40px); /* Width for two columns with gap */
-    box-sizing: border-box; /* Include padding and border in width */
+    width: calc(50% - 40px);
+    box-sizing: border-box;
 }
 
 .card img {
-    border-radius: 5px; /* Adjusted border-radius */
+    border-radius: 5px;
     width: 80px;
     height: 80px;
-    object-fit: contain; /* Ensure the image fits within the box */
+    object-fit: contain;
     transition: transform 0.3s;
 }
 
 .card img:hover {
-    transform: scale(1.1); /* Slightly enlarge images on hover */
+    transform: scale(1.1);
 }
 
 .card h3 {
     margin: 0;
     font-size: 24px;
     color: #333;
-    text-align: center; /* Center align text */
+    text-align: center;
 }
 
 .card h3 a {
@@ -119,25 +183,84 @@ form {
 }
 
 .card h3 a:hover {
-    color: #0069d9; /* Change color on hover */
+    color: #0069d9;
 }
 
 .card p {
     margin: 5px 0;
     font-size: 16px;
     color: #666;
-    text-align: center; /* Center align text */
+    text-align: center;
 }
 
 .card:hover {
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .cards {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around; /* Distribute space around cards */
+    justify-content: space-around;
     gap: 20px;
+}
+
+.team-card {
+    width: calc(25% - 20px);
+    margin: 10px;
+    background-color: #fff;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.team-card img {
+    border-radius: 5px;
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    transition: transform 0.3s;
+}
+
+.team-card img:hover {
+    transform: scale(1.1);
+}
+
+.team-card h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+    text-align: center;
+}
+
+.team-card h3 a {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s;
+}
+
+.team-card h3 a:hover {
+    color: #0069d9;
+}
+
+.team-card p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+}
+
+.team-card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.team-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 table {
@@ -160,12 +283,12 @@ thead th {
     color: #fff;
 }
 
-tbody tr:nth-child(even) {
-    background-color: #f2f2f2;
+tbody tr {
+    background-color: #fff; /* Asegura que todas las filas tengan un fondo blanco */
 }
 
 tbody tr:hover {
-    background-color: #ddd;
+    background-color: #ddd; /* Mantiene el color de fondo al pasar el mouse */
 }
 
 .welcome {
@@ -242,57 +365,89 @@ footer {
 
 .footer-container {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     max-width: 1200px;
     margin: 0 auto;
 }
 
 .footer-section {
     flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    margin: 10px;
+    text-align: center;
+}
+
+.footer-section.logo-section {
     text-align: center;
 }
 
 .footer-section img.footer-logo {
-    width: 120px;
-    height: 120px;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
-    object-fit: cover; /* Ensure the logo fits within the circle */
+    object-fit: cover;
+}
+
+.footer-section.links-section h4,
+.footer-section.subscription-section h4,
+.footer-section.social-section h4 {
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.footer-section.links-section ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+
+.footer-section.links-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section.links-section ul li a {
+    color: #bbb;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-section.links-section ul li a:hover {
+    color: #fff;
 }
 
 .footer-section .form {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    gap: 10px;
     width: 100%;
-}
-
-.footer-section .note {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
 .footer-section .input-group {
     display: flex;
+    flex-direction: column; /* Cambiado para que los elementos estén en columna */
     align-items: center;
     width: 100%;
-    max-width: 400px;
+    max-width: 500px; /* Aumenta el ancho máximo */
+}
+
+.footer-section .note {
+    font-size: 18px; /* Ajusta el tamaño del texto */
+    margin-bottom: 10px;
 }
 
 .footer-section .input_field {
-    width: 70%;
-    height: 42px;
-    padding: 0 10px;
-    border-radius: 5px 0 0 5px;
+    width: 100%; /* Aumenta el ancho al 100% del contenedor */
+    height: 50px; /* Aumenta la altura del campo de entrada */
+    padding: 0 15px; /* Aumenta el padding interno */
+    border-radius: 5px;
     outline: none;
     border: 1px solid #e5e5e5;
     transition: all 0.3s ease-in-out;
+    font-size: 16px; /* Aumenta el tamaño de la fuente */
 }
 
 .footer-section .input_field:focus {
@@ -301,69 +456,75 @@ footer {
 }
 
 .footer-section .submit {
-    width: 30%;
-    height: 42px;
+    width: 100%; /* Aumenta el ancho al 100% del contenedor */
+    height: 50px; /* Aumenta la altura del botón */
     background: #0069d9;
     color: #fff;
     border: none;
-    border-radius: 0 5px 5px 0;
+    border-radius: 5px;
     cursor: pointer;
     transition: background 0.3s ease-in-out;
+    font-size: 18px; /* Aumenta el tamaño de la fuente */
+    margin-top: 10px; /* Añade un margen superior */
 }
 
 .footer-section .submit:hover {
     background: #0056b3;
 }
 
-.rating {
+.footer-section .social-section .social-icons {
     display: flex;
     justify-content: center;
-    margin-top: 10px;
+    gap: 10px;
 }
 
-.rating input {
-    display: none;
+.footer-section .social-section .social-icons a img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s;
 }
 
-.rating label {
-    font-size: 30px;
-    color: #ccc;
-    cursor: pointer;
-    transition: color 0.3s ease-in-out;
-}
-
-.rating input:checked ~ label,
-.rating label:hover,
-.rating label:hover ~ label {
-    color: #ff9800;
-}
-
-.status {
-    margin-top: 20px;
-}
-
-.status span {
-    display: inline-block;
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    margin: 0 5px;
-}
-
-.status .w {
-    background-color: #4CAF50;
-}
-
-.status .d {
-    background-color: #FFC107;
-}
-
-.status .l {
-    background-color: #F44336;
+.footer-section .social-section .social-icons a img:hover {
+    transform: scale(1.1);
 }
 
 footer p {
     margin: 20px 0 0;
     font-size: 14px;
     color: #bbb;
+}
+
+.social-icon {
+    width: 56px;        /* Ancho deseado */
+    height: 52px;       /* Altura deseada */
+    border-radius: 50%; /* Bordes redondeados */
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        margin: 20px 0;
+        text-align: center;
+    }
+
+    .footer-section .input-group {
+        flex-direction: column;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .footer-section .input_field {
+        border-radius: 5px;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .footer-section .submit {
+        border-radius: 5px;
+        width: 100%;
+    }
 }
