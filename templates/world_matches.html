@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container">
+        <div class="welcome">
+            <h2>Partidos de hoy del mundo</h2>
+        </div>
+        <div class="cards">
+            {% for match in matches %}
+                <div class="card">
+                    <img src="{{ match.homeTeam.crest }}" alt="{{ match.homeTeam.name }} crest">
+                    <img src="{{ match.awayTeam.crest }}" alt="{{ match.awayTeam.name }} crest">
+                    <div>
+                        <h3>{{ match.homeTeam.name }} vs {{ match.awayTeam.name }}</h3>
+                        <p><strong>Competition:</strong> {{ match.competition.name }}</p>
+                        <p><strong>Date:</strong> {{ match.utcDate}}</p>
+                        <p><strong>Status:</strong> {{ match.status }}</p>
+                        <p><strong>Score:</strong> 
+                            {% if match.score.fullTime.home is not none and match.score.fullTime.away is not none %}
+                                {{ match.score.fullTime.home }} - {{ match.score.fullTime.away }}
+                            {% else %}
+                                Not available
+                            {% endif %}
+                        </p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <h2>Tabla de Clasificación de la LIGA</h2>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Pos</th>
+                    <th>Equipo</th>
+                    <th>Puntos</th>
+                    <th>Victorias</th>
+                    <th>Empates</th>
+                    <th>Derrotas</th>
+                    <th>Diferencia de Goles</th>
+                    <th>Historial</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for team in league_table_data_besoccer['table'] %}
+                    <tr>
+                        <td>{{ team['pos'] }}</td>
+                        <td><img src="{{ team['shield'] }}" alt="{{ team['team'] }} Shield"> {{ team['team'] }}</td>
+                        <td>{{ team['points'] }}</td>
+                        <td>{{ team['wins'] }}</td>
+                        <td>{{ team['draws'] }}</td>
+                        <td>{{ team['losses'] }}</td>
+                        <td>{{ team['gf'] }} - {{ team['ga'] }}</td>
+                        <td class="form">
+                            {% for result in team['form'] %}
+                                <span class="{{ result }}"></span>
+                            {% endfor %}
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

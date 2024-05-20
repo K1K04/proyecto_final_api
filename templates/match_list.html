@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container">
+        <div class="welcome">
+            <h2>Matches of the Day</h2>
+        </div>
+        <div class="cards">
+            {% for match in matches %}
+                <div class="card">
+                    <img src="{{ match['local_shield'] }}" alt="{{ match['local'] }} shield">
+                    <img src="{{ match['visitor_shield'] }}" alt="{{ match['visitor'] }} shield">
+                    <div>
+                        <h3>{{ match['local'] }} vs {{ match['visitor'] }}</h3>
+                        <p><strong>Competition:</strong> {{ match['competition_name'] }}</p>
+                        <p><strong>Date:</strong> {{ match['date'] }} {{ match['hour'] }}:{{ match['minute'] }}</p>
+                        <p><strong>Score:</strong> 
+                            {% if match['result'] is not none %}
+                                {{ match['result'] }}
+                            {% else %}
+                                Not available
+                            {% endif %}
+                        </p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
