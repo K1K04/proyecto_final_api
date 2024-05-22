@@ -1,4 +1,4 @@
-<!-- base.html -->
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -22,6 +22,7 @@
                     <li><a href="{{ url_for('world_matches') }}">Partidos de hoy</a></li>
                     <li><a href="{{ url_for('matches_summary') }}">Resumen de Partidos</a></li>
                     <li><a href="{{ url_for('subscribers') }}">Suscriptores</a></li>
+                    <li><a href="{{ url_for('advanced_search') }}">Consultar partidos</a></li>
                 </ul>
             </nav>
         </div>
@@ -45,13 +46,14 @@
                     <li><a href="{{ url_for('world_matches') }}">Partidos de hoy</a></li>
                     <li><a href="{{ url_for('matches_summary') }}">Resumen de Partidos</a></li>
                     <li><a href="{{ url_for('subscribers') }}">Suscriptores</a></li>
+                    <li><a href="{{ url_for('advanced_search') }}">Consulta Avanzada</a></li>
                 </ul>
             </div>
             <div class="footer-section subscription-section">
                 <h4>Suscríbete</h4>
                 <form class="form" method="post" action="{{ url_for('subscribe') }}">
                     <div class="input-group">
-                        <input placeholder="Introduce tu e-mail" title="Introduce tu e-mail" name="email" type="email" class="input_field">
+                        <input placeholder="Introduce tu e-mail" title="Introduce tu e-mail" name="email" type="email" class="input_field" required>
                         <button class="submit">Enviar</button>
                     </div>
                 </form>
@@ -59,10 +61,10 @@
             <div class="footer-section social-section">
                 <h4>Síguenos</h4>
                 <div class="social-icons">
-                    <a href="#"><img class="social-icon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/1200px-Facebook_f_logo_%282019%29.svg.png" alt="Facebook"></a>
-                    <a href="#"><img class="social-icon" src="https://img.utdstc.com/screen/5d1/7ef/5d17ef691e560d16871a5195ac691d89a50d72733a19a2165d79321b43898228:600" alt="Twitter"></a>
-                    <a href="#"><img class="social-icon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/800px-Instagram_logo_2022.svg.png" alt="Instagram"></a>
-                    <a href="#"><img class="social-icon" src="https://i.blogs.es/518b29/youtube/1366_2000.jpg" alt="YouTube"></a>
+                    <a href="https://www.facebook.com/rfutbol/?locale=es_ES"  target="_blank" rel="noopener" ><img class="social-icon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/1200px-Facebook_f_logo_%282019%29.svg.png" alt="Facebook"></a>
+                    <a href="https://x.com/besoccer_ES" target="_blank" rel="noopener" ><img class="social-icon" src="https://img.utdstc.com/screen/5d1/7ef/5d17ef691e560d16871a5195ac691d89a50d72733a19a2165d79321b43898228:600" alt="Twitter"></a>
+                    <a href="https://www.instagram.com/besoccer/?hl=es" target="_blank" rel="noopener"  ><img class="social-icon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/800px-Instagram_logo_2022.svg.png" alt="Instagram"></a>
+                    <a href="https://www.youtube.com/channel/UCGAvm_Zz0-hZ6nWmxeHLhlQ"  target="_blank" rel="noopener" ><img class="social-icon" src="https://i.blogs.es/518b29/youtube/1366_2000.jpg" alt="YouTube"></a>
                 </div>
             </div>            
         </div>

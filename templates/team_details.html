@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <button class="back-button" onclick="history.back()">Volver</button>
+    {% if error_message %}
+        <p>{{ error_message }}</p>
+    {% else %}
+        <div class="team-details">
+            <div class="team-header">
+                <img src="{{ team.crest }}" alt="{{ team.name }} crest" class="team-crest">
+                <div class="team-info">
+                    <h2>{{ team.name }}</h2>
+                    <p><strong>Fundado:</strong> {{ team.founded }}</p>
+                    <p><strong>Colores:</strong> {{ team.clubColors }}</p>
+                    <p><strong>Estadio:</strong> {{ team.venue }}</p>
+                    <p><strong>Dirección:</strong> {{ team.address }}</p>
+                    <p><strong>Sitio web:</strong> <a href="{{ team.website }}" target="_blank">{{ team.website }}</a></p>
+                </div>
+            </div>
+            
+            <div class="coach-details">
+                <h3>Entrenador</h3>
+                <p><strong>Nombre:</strong> {{ team.coach.name }}</p>
+                <p><strong>Fecha de nacimiento:</strong> {{ team.coach.dateOfBirth }}</p>
+                <p><strong>Nacionalidad:</strong> {{ team.coach.nationality }}</p>
+                <p><strong>Contrato:</strong> Desde {{ team.coach.contract.start }} hasta {{ team.coach.contract.until }}</p>
+            </div>
+            
+            <div class="squad-details">
+                <h3>Jugadores</h3>
+                <ul>
+                    {% for player in team.squad %}
+                        <li>
+                            <p><strong>Nombre:</strong> {{ player.name }}</p>
+                            <p><strong>Posición:</strong> {{ player.position }}</p>
+                            <p><strong>Fecha de nacimiento:</strong> {{ player.dateOfBirth }}</p>
+                            <p><strong>Nacionalidad:</strong> {{ player.nationality }}</p>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    {% endif %}
+</div>
+{% endblock %}

@@ -2,6 +2,7 @@
 
 {% block content %}
 <div class="container">
+<button class="back-button" onclick="history.back()">Volver</button>
     <h2>Lista de Equipos de la LIGA</h2>
     {% if error_message %}
         <p>{{ error_message }}</p>
@@ -9,11 +10,11 @@
         <div class="team-cards">
             {% for team in teams %}
                 <div class="team-card">
-                    <a href="https://es.besoccer.com/equipo/{{ team['basealias'] }}" target="_blank">
+                    <a href="{{ url_for('team_details', short_name=team['short_name']) }}">
                         <img src="{{ team['shield'] }}" alt="{{ team['nameShow'] }} shield" width="80" height="80">
                     </a>
                     <div>
-                        <h3><a href="https://es.besoccer.com/equipo/{{ team['basealias'] }}" target="_blank">{{ team['nameShow'] }}</a></h3>
+                        <h3><a href="{{ url_for('team_details', short_name=team['short_name']) }}">{{ team['nameShow'] }}</a></h3>
                         <p>{{ team['fullName'] }}</p>
                     </div>
                 </div>
