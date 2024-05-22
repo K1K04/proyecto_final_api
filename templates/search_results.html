@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="search-results-container">
+    <button class="back-button" onclick="history.back()">Volver</button>
+    <h2>Resultados de la Consulta e partidos por fecha</h2>
+    {% if error_message %}
+        <p class="error-message">{{ error_message }}</p>
+    {% else %}
+        {% if matches %}
+            <ul class="results-list">
+                {% for match in matches %}
+                    <li class="result-item">
+                        <div class="result-header">
+                            <p class="competition-name"><strong>Competición:</strong> {{ match.competition_name }}</p>
+                            <p class="match-date"><strong>Fecha:</strong> {{ match.date }} {{ match.hour }}:{{ match.minute }}</p>
+                        </div>
+                        <div class="teams">
+                            <div class="team local-team">
+                                <img src="{{ match.local_shield }}" alt="{{ match.local }} shield" class="team-shield">
+                                <p class="team-name"><strong>Equipo Local:</strong> {{ match.local }}</p>
+                            </div>
+                            <div class="team visitor-team">
+                                <img src="{{ match.visitor_shield }}" alt="{{ match.visitor }} shield" class="team-shield">
+                                <p class="team-name"><strong>Equipo Visitante:</strong> {{ match.visitor }}</p>
+                            </div>
+                        </div>
+                        <p class="match-status"><strong>Estado:</strong> {{ match.status }}</p>
+                        <p class="match-result"><strong>Resultado:</strong> 
+                            {% if match.result != 'Not available' %}
+                                {{ match.result }}
+                            {% else %}
+                                No disponible
+                            {% endif %}
+                        </p>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p class="no-results">No se han encontrado partidos con los datos introducidos.</p>
+        {% endif %}
+    {% endif %}
+</div>
+{% endblock %}
