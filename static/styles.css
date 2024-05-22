@@ -12,6 +12,90 @@ body {
     padding: 20px;
 }
 
+.back-button {
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #0069d9;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.back-button:hover {
+    background-color: #0056b3;
+}
+
+.team-details {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.team-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.team-crest {
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+}
+
+.team-info {
+    flex: 1;
+}
+
+.team-info h2 {
+    margin: 0 0 10px;
+    font-size: 28px;
+    color: #0069d9;
+}
+
+.team-info p {
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+.coach-details, .squad-details {
+    margin-top: 20px;
+}
+
+.coach-details h3, .squad-details h3 {
+    font-size: 22px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.coach-details p, .squad-details p {
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+.squad-details ul {
+    list-style: none;
+    padding: 0;
+}
+
+.squad-details ul li {
+    margin-bottom: 10px;
+    padding: 10px;
+    background: #f8f8f8;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.squad-details ul li p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
 header {
     position: relative;
     background: url('https://www.uaeh.edu.mx/gaceta/2/numero13/marzo/images/alumnos-garza-comunican/main.jpg') no-repeat center center/cover;
@@ -498,6 +582,191 @@ footer p {
     width: 56px;        /* Ancho deseado */
     height: 52px;       /* Altura deseada */
     border-radius: 50%; /* Bordes redondeados */
+}
+
+/* CSS para advanced_search.html */
+.advanced-search-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.advanced-search-container h2 {
+    text-align: center;
+    color: #0069d9;
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+
+.advanced-search-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.advanced-search-container .form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.advanced-search-container label {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.advanced-search-container input,
+.advanced-search-container select {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    transition: border 0.3s;
+}
+
+.advanced-search-container input:focus,
+.advanced-search-container select:focus {
+    border-color: #0069d9;
+}
+
+.advanced-search-container button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #0069d9;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    align-self: center;
+}
+
+.advanced-search-container button:hover {
+    background-color: #0056b3;
+}
+
+.search-results-container {
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.search-results-container h2 {
+    text-align: center;
+    color: #0069d9;
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+
+.search-results-container ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.search-results-container .result-item {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.search-results-container .result-item p {
+    margin: 5px 0;
+}
+
+.search-results-container .result-item strong {
+    color: #333;
+}
+
+/* CSS para search_results.html */
+.search-results-container {
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.search-results-container h2 {
+    text-align: center;
+    color: #0069d9;
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+
+.results-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.result-item {
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    transition: transform 0.2s ease-in-out;
+}
+
+.result-item:hover {
+    transform: scale(1.02);
+    border-color: #bbb;
+}
+
+.result-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.competition-name,
+.match-date {
+    font-size: 16px;
+    color: #333;
+}
+
+.teams {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.team {
+    display: flex;
+    align-items: center;
+}
+
+.team-shield {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.team-name {
+    font-size: 16px;
+    color: #333;
+}
+
+.match-status {
+    font-size: 16px;
+    color: #333;
+}
+
+.no-results {
+    text-align: center;
+    font-size: 16px;
+    color: #777;
+    margin-top: 20px;
 }
 
 @media (max-width: 768px) {
