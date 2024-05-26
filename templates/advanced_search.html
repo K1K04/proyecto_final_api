@@ -3,11 +3,11 @@
 {% block content %}
 <div class="advanced-search-container">
     <button class="back-button" onclick="history.back()">Volver</button>
-    <h2>Consulta de partidos</h2>
+    <h2>Consulta de partidos de LIGAS</h2>
     <p>Ejemplo de los campos a rellenar:</p>
     <ul>
-        <li>Fecha desde: <i>23/05/2024</i></li>
-        <li>Fecha hasta: <i>19/05/2024</i></li>
+        <li>Fecha desde: <i>19/05/2024</i></li>
+        <li>Fecha hasta: <i>23/05/2024</i></li>
         <li>Estado: <i>Finalizado</i></li>
     </ul>
     <form action="{{ url_for('advanced_search') }}" method="GET">
