@@ -1,6 +1,6 @@
 import os
 import requests
-from flask import Flask, render_template, request, redirect, url_for, jsonify
+from flask import Flask, render_template, request, redirect
 import json
 
 app = Flask(__name__)
@@ -61,14 +61,15 @@ def team_list():
 
     name_filter = request.args.get('name')
     if name_filter:
-        filtered_teams = [team for team in teams_data_besoccer['team'] if name_filter.lower() in team['nameShow'].lower()]
+        filtered_teams = [team for team in teams_data_besoccer['team'] if team['nameShow'].lower().startswith(name_filter.lower())]
         if not filtered_teams:
-            error_message = f"No se encontró ningún equipo con el nombre '{name_filter}'."
+            error_message = f"No se encontró ningún equipo que empiece con la letra '{name_filter}'."
             return render_template('team_list.html', teams=None, error_message=error_message)
     else:
         filtered_teams = teams_data_besoccer['team']
 
     return render_template('team_list.html', teams=filtered_teams, error_message=None)
+
 
 @app.route('/league_table')
 def league_table():
@@ -122,6 +123,7 @@ def matches_summary():
 
     return render_template('matches_summary.html', matches_summary_data=filtered_data)
 
+
 @app.route('/team_details/<short_name>')
 def team_details(short_name):
     football_data_api_key = os.getenv("keyfut1")
@@ -131,7 +133,7 @@ def team_details(short_name):
     url = f'https://api.football-data.org/v4/competitions/2014/teams'
     headers = {'X-Auth-Token': football_data_api_key}
     response = requests.get(url, headers=headers)
-    response.raise_for_status()  # Esto lanzará una excepción si la respuesta no es 200 OK
+    response.raise_for_status() 
     data = response.json()
 
     team = next((team for team in data['teams'] if team['tla'] == short_name), None)
